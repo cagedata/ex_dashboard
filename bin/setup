@@ -1,0 +1,15 @@
+#!/bin/bash
+
+source .env
+
+mix deps.get
+npm install
+
+echo "Everything is all setup!"
+
+echo "Would you like to start the server? [yN]"
+read -e start
+case $start in
+  yes | YES | y | Y) exec bin/server;;
+  *) exit 0;;
+esac

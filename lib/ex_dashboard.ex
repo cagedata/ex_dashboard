@@ -1,0 +1,2 @@
+defmodule ExDashboard do
+end

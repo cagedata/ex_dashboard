@@ -1,0 +1,47 @@
+<div class="gridster">
+  <ul>
+    <!--<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div class="widget-forecast"
+           data-widget="Forecast"
+           data-source="forecast"
+           data-title="Current Weather">
+      </div>
+    </li>-->
+    <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+      <div class="widget-valuation"
+           data-widget="Number"
+           data-source="service_desk_issue_count"
+           data-moreinfo="Powered by JIRA"
+           data-title="Open Service Desk Issues">
+      </div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div class="widget-oncall"
+           data-widget="Text"
+           data-source="victorops_oncall"
+           data-title="Who's on call?"
+           data-moreinfo="Powered by VictorOps">
+      </div>
+    </li>
+    <li data-row="1" data-col="4" data-sizex="2" data-sizey="2">
+      <div class="widget-incidents"
+           data-widget="VictorOps"
+           data-source="victorops_incidents"
+           data-title="Open incidents">
+      </div>
+    </li>
+    <!--<li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+      <div class="widget-image"
+           data-widget="Image"
+           data-source="aww">
+      </div>
+    </li>-->
+    <li data-row="2" data-col="2" data-sizex="2" data-sizey="1">
+      <div class="widget-twitter"
+           data-widget="Tweet"
+           data-source="twitter"
+           data-title="Twitter"
+           data-moreinfo="Latest tweets for <%= Application.get_env(:ex_dashboard, :twitter_search) %>"></div>
+    </li>
+  </ul>
+</div>

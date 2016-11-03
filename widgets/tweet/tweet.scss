@@ -1,0 +1,33 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #4099FF;
+$value-color:       #fff;
+
+$title-color:       rgba(255, 255, 255, 0.7);
+$label-color:       rgba(255, 255, 255, 1.0);
+$moreinfo-color:    rgba(255, 255, 255, 0.7);
+
+.widget-tweet {
+  background: $background-color;
+
+  img.profile-pic {
+    margin-right: 5px;
+    border: 1px solid $value-color;
+  }
+
+  .title {
+    color: $title-color;
+    margin-bottom: 15px;
+  }
+
+  .tweet {
+    color: $label-color;
+    font-weight: normal;
+    font-size: 1rem;
+  }
+
+  .more-info {
+    color: $moreinfo-color;
+  }
+}
