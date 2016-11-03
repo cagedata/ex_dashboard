@@ -17,10 +17,10 @@ defmodule VictorOps do
   end
 
   def on_call(team) do
-    {:ok, team} = ExVictorOps.OnCall.get_team "support-team", days_forward: 0
+    {:ok, team} = ExVictorOps.OnCall.get_team team, days_forward: 0
     on_call = List.first(team.schedule)["onCall"]
     if !Enum.empty?(team.overrides) do
-      Enum.each team.overrides, fn(override, acc) ->
+      Enum.each team.overrides, fn(override) ->
         if override["origOnCall"] == on_call, do: on_call = override["overrideOnCall"]
       end
     end

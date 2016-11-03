@@ -1,0 +1,19 @@
+<div class="gridster" data-resolution="1080">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="3" data-sizey="3">
+      <div class="widget-incidents"
+           data-widget="List"
+           data-source="unassigned_jira_issues"
+           data-moreinfo="Powered by JIRA"
+           data-title="Unassigned Service Desk Issues">
+      </div>
+    </li>
+    <li data-row="1" data-col="2" data-sizex="2" data-sizey="3">
+      <div class="widget-incidents"
+           data-widget="VictorOps"
+           data-source="victorops_incidents"
+           data-title="Open incidents">
+      </div>
+    </li>
+  </ul>
+</div>
