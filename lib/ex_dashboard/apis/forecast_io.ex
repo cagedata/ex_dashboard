@@ -1,4 +1,4 @@
-defmodule ForecastIO do
+defmodule ExDashboard.APIs.ForecastIO do
   @units "us"
 
   def get(location) do

@@ -6,7 +6,7 @@ import Gridster from 'jquery.gridster';
 window.jQuery = window.$ = $;
 window.Gridster = Gridster;
 
-class App {
+class Kitto {
   static initializeGridster() {
     const $gridster = $('.gridster');
     const resolution = $gridster.data('resolution');
@@ -34,12 +34,6 @@ class App {
 
     return this;
   }
-  static initializeWidgets() {
-    return;
-  }
 }
 
-$(function() {
-  App.initializeGridster()
-     .initializeWidgets()
-});
+Kitto.initializeGridster();

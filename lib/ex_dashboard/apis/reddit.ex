@@ -1,4 +1,4 @@
-defmodule Reddit do
+defmodule ExDashboard.APIs.Reddit do
   def subreddit(sub) do
     HTTPoison.get!("https://www.reddit.com/r/#{sub}.json").body
       |> Poison.decode!

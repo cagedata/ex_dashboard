@@ -1,8 +1,8 @@
 <div class="gridster" data-resolution="1080">
   <ul>
     <li data-row="1" data-col="1" data-sizex="3" data-sizey="3">
-      <div class="widget-incidents"
-           data-widget="List"
+      <div class="widget-jira"
+           data-widget="Jira"
            data-source="unassigned_jira_issues"
            data-moreinfo="Powered by JIRA"
            data-title="Unassigned Service Desk Issues">

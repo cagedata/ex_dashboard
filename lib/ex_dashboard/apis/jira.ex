@@ -1,4 +1,4 @@
-defmodule Jira do
+defmodule ExDashboard.APIs.Jira do
   @filters [
     "service_desk_issues": "10300",
     "unassigned_issues": "10100"

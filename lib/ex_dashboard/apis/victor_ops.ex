@@ -1,4 +1,4 @@
-defmodule VictorOps do
+defmodule ExDashboard.APIs.VictorOps do
   def incidents(phases) do
     {:ok, incidents} = ExVictorOps.Incidents.get
     incidents

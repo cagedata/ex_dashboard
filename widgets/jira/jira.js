@@ -2,9 +2,9 @@ import React from 'react';
 import Widget from '../../assets/javascripts/widget';
 import {updatedAt,truncate} from '../../assets/javascripts/helpers';
 
-import './list.scss';
+import './jira.scss';
 
-class ListItem extends React.Component {
+class Ticket extends React.Component {
   render() {
     return (
       <li>
@@ -19,10 +19,10 @@ class ListItem extends React.Component {
   }
 }
 
-export class List extends Widget {
+export class Jira extends Widget {
   renderItems(items) {
     return items.map((item, i) => {
-      return <ListItem key={i}
+      return <Ticket key={i}
                        label={item.label}
                        value={item.value}
                        labelLength={+this.props.labelLength}
@@ -47,4 +47,4 @@ export class List extends Widget {
   }
 };
 
-Widget.mount(List);
+Widget.mount(Jira);

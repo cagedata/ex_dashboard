@@ -22,7 +22,7 @@ defmodule ExDashboard.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:kitto, "~> 0.1.1"},
+      {:kitto, "~> 0.2"},
       {:ex_victor_ops, github: "cagedata/ex_victor_ops"},
       {:poison, "~> 3.0.0", override: true},
       {:extwitter, "~> 0.6"},
