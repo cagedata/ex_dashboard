@@ -15,4 +15,6 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :kitto, default_dashboard: "general"
+
 import_config "#{Mix.env}.exs"

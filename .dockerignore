@@ -33,5 +33,6 @@ public/
 
 .env
 .env.docker
-habitat/env.toml
+habitat
 rel
+Makefile
