@@ -5,18 +5,21 @@ filters = [
   "unassigned_issues": "10100"
 ]
 
-job :open_jira_issues, every: {2, :minutes} do
-  count = ExDashboard.APIs.Jira.incidents(filters[:service_desk_issues])
-  |> ExDashboard.APIs.Jira.count
+job :service_desk_issues, every: {2, :minutes} do
+  issues = ExDashboard.APIs.Jira.issues(filters[:service_desk_issues])
 
-  broadcast! :service_desk_issue_count, %{value: count}
+  short_list = issues["issues"]
+    |> Enum.map(&ExDashboard.APIs.Jira.issue_for_dashboard/1)
+
+  broadcast! :service_desk_issues_count, %{value: ExDashboard.APIs.Jira.count(issues)}
+  broadcast! :service_desk_issues, %{items: short_list}
 end
 
 job :unassigned_jira_issues, every: {2, :minutes} do
-  issues = ExDashboard.APIs.Jira.incidents(filters[:unassigned_issues])["issues"]
-    |> Enum.map(fn(incident) ->
-      %{ label: incident["fields"]["summary"], value: incident["key"] }
-    end)
+  issues = ExDashboard.APIs.Jira.issues(filters[:unassigned_issues])
+  issue_list = issues["issues"]
+    |> Enum.map(&ExDashboard.APIs.Jira.issue_for_dashboard/1)
 
-    broadcast! :unassigned_jira_issues, %{items: issues}
+    broadcast! :unassigned_jira_issues_count, %{value: ExDashboard.APIs.Jira.count(issues)}
+    broadcast! :unassigned_jira_issues, %{items: issue_list}
 end

@@ -4,16 +4,15 @@ import {updatedAt,truncate} from '../../assets/javascripts/helpers';
 
 import './jira.scss';
 
-class Ticket extends React.Component {
+class Issue extends React.Component {
   render() {
     return (
       <li>
+        <img className="priority-icon" src={this.props.priorityImage} alt={this.props.priority} />
         <span className="label">
-          {truncate(this.props.label, this.props.labelLength || 80)}
+          {truncate(this.props.summary, this.props.summaryLength || 80)}
         </span>
-        <span className="value">
-          {truncate(this.props.value, this.props.valueLength)}
-        </span>
+        <span className="value">{this.props.id}</span>
       </li>
     );
   }
@@ -22,23 +21,25 @@ class Ticket extends React.Component {
 export class Jira extends Widget {
   renderItems(items) {
     return items.map((item, i) => {
-      return <Ticket key={i}
-                       label={item.label}
-                       value={item.value}
-                       labelLength={+this.props.labelLength}
-                       valueLength={+this.props.valueLength}/>;
+      return <Issue key={i}
+                    id={item.id}
+                    summary={item.summary}
+                    summaryLength={+this.props.summaryLength}
+                    priority={item.priority.name}
+                    priorityImage={item.priority.iconUrl}/>;
     });
   }
   renderList(items) {
-    return this.props.unordered ? <ul>{items}</ul> : <ol>{items}</ol>;
+    return <ul>{items}</ul>;
   }
   render() {
+    let items = (this.state.items || []).slice(0, this.props.limit || Infinity)
     return (
       <div className={this.props.className}>
         <h1 className="title">{this.props.title}</h1>
         <h3>{this.props.text}</h3>
         <ul>
-          {this.renderList(this.renderItems(this.state.items || []))}
+          {this.renderList(this.renderItems(items))}
         </ul>
         <p className="more-info">{this.props.moreinfo}</p>
         <p className="updated-at">{updatedAt(this.state.updated_at)}</p>

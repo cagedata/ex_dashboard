@@ -10,7 +10,7 @@
     <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
       <div class="wdiget-valuation"
            data-widget="Number"
-           data-source="service_desk_issue_count"
+           data-source="service_desk_issues_count"
            data-moreinfo="Powered by JIRA"
            data-title="Open Service Desk Issues">
       </div>

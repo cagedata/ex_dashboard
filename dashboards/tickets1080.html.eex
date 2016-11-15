@@ -9,10 +9,11 @@
       </div>
     </li>
     <li data-row="1" data-col="2" data-sizex="2" data-sizey="3">
-      <div class="widget-incidents"
-           data-widget="VictorOps"
-           data-source="victorops_incidents"
-           data-title="Open incidents">
+      <div class="widget-jira"
+           data-widget="Jira"
+           data-source="service_desk_issues"
+           data-moreinfo="Powered by JIRA"
+           data-title="Open Service Desk Issues">
       </div>
     </li>
   </ul>

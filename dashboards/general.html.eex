@@ -1,16 +1,9 @@
 <div class="gridster">
   <ul>
-    <!--<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div class="widget-forecast"
-           data-widget="Forecast"
-           data-source="forecast"
-           data-title="Current Weather">
-      </div>
-    </li>-->
     <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
       <div class="widget-valuation"
            data-widget="Number"
-           data-source="service_desk_issue_count"
+           data-source="service_desk_issues_count"
            data-moreinfo="Powered by JIRA"
            data-title="Open Service Desk Issues">
       </div>
@@ -30,12 +23,6 @@
            data-title="Open incidents">
       </div>
     </li>
-    <!--<li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
-      <div class="widget-image"
-           data-widget="Image"
-           data-source="aww">
-      </div>
-    </li>-->
     <li data-row="2" data-col="2" data-sizex="2" data-sizey="1">
       <div class="widget-twitter"
            data-widget="Tweet"
