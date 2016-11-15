@@ -13,7 +13,7 @@
   "httpotion": {:hex, :httpotion, "3.0.2", "525b9bfeb592c914a61a8ee31fdde3871e1861dfe805f8ee5f711f9f11a93483", [:mix], [{:ibrowse, "~> 4.2", [hex: :ibrowse, optional: false]}]},
   "ibrowse": {:hex, :ibrowse, "4.2.2", "b32b5bafcc77b7277eff030ed32e1acc3f610c64e9f6aea19822abcadf681b4b", [:rebar3], []},
   "idna": {:hex, :idna, "1.2.0", "ac62ee99da068f43c50dc69acf700e03a62a348360126260e87f2b54eced86b2", [:rebar3], []},
-  "kitto": {:hex, :kitto, "0.2.1", "40d1c42ede930018f03be9eead4f2e18e3469f524df3041eec71a83cba45c3cc", [:mix], [{:cowboy, "~> 1.0.0", [hex: :cowboy, optional: false]}, {:plug, "~> 1.2", [hex: :plug, optional: false]}, {:poison, "~> 2.0", [hex: :poison, optional: false]}]},
+  "kitto": {:hex, :kitto, "0.2.3", "39b2ed633d00372f727d3c811a763e4fe3ec284c3a407c92062be5cf8041f5f2", [:mix], [{:cowboy, "~> 1.0.0", [hex: :cowboy, optional: false]}, {:plug, "~> 1.2", [hex: :plug, optional: false]}, {:poison, "~> 2.0", [hex: :poison, optional: false]}]},
   "metrics": {:hex, :metrics, "1.0.1", "25f094dea2cda98213cecc3aeff09e940299d950904393b2a29d191c346a8486", [:rebar3], []},
   "mime": {:hex, :mime, "1.0.1", "05c393850524767d13a53627df71beeebb016205eb43bfbd92d14d24ec7a1b51", [:mix], []},
   "mimerl": {:hex, :mimerl, "1.0.2", "993f9b0e084083405ed8252b99460c4f0563e41729ab42d9074fd5e52439be88", [:rebar3], []},
