@@ -1,6 +1,6 @@
 -include .env
 
-IMAGE := davejlong/ex_dashboard
+IMAGE := cagedata/ex_dashboard
 
 setup:
 	@mix deps.get
@@ -14,3 +14,6 @@ console:
 
 image:
 	docker build -t ${IMAGE} .
+
+push:
+	docker push ${IMAGE}
