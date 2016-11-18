@@ -1,6 +1,6 @@
 use Kitto.Job.DSL
 
-job :twitter, every: {20, :seconds} do
+job :twitter, every: {1, :minute} do
   search = Application.get_env(:ex_dashboard, :twitter_search)
   tweets = ExTwitter.search(search, count: 1)
           |> Enum.map(fn (tweet) ->

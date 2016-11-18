@@ -1,6 +1,6 @@
 use Kitto.Job.DSL
 
-job :forcast, every: {5, :minutes} do
+job :forcast, every: {10, :minutes} do
   forecast = ExDashboard.APIs.ForecastIO.get Application.get_env(:ex_dashboard, :forecast_location)
   current_temp = forecast["currently"]["temperature"] |> Float.round |> trunc
   hour_summary = forecast["minutely"]["summary"]
