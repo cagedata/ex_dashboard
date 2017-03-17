@@ -1,5 +1,10 @@
 use Mix.Config
 
+config :kitto,
+  default_dashboard: "general",
+  ip: {0, 0, 0, 0},
+  port: {:system, "PORT"}
+  
 config :ex_dashboard,
   twitter_search: "#devopsdays",
   victorops_org: System.get_env("VICTOROPS_ORG"),

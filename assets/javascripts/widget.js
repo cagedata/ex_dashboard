@@ -12,7 +12,7 @@ class Widget extends React.Component {
 
   static events() {
     if (!this._events) {
-      this._events = new EventSource('/events');
+      this._events = new EventSource(`/events?topics=${this.sources().join()}`);
 
       this._events.addEventListener('error', (e) => {
         let state = e.currentTarget.readyState;
@@ -23,9 +23,32 @@ class Widget extends React.Component {
           setTimeout((() => window.location.reload()), 5 * 60 * 1000)
         }
       });
+
+      this.bindInternalEvents();
     }
 
     return this._events;
+  }
+
+  static sources() {
+    return Array.prototype.map
+      .call(document.querySelectorAll('[data-source]'), (el) => el.dataset.source);
+  }
+
+  static bindInternalEvents() {
+    this._events.addEventListener('_kitto', (event) => {
+      let data = JSON.parse(event.data);
+
+      switch (data.message.event) {
+        case 'reload':
+          if (data.message.dashboard === '*' ||
+              document.location.pathname.endsWith(data.message.dashboard)) {
+            document.location.reload()
+          }
+
+          break;
+      }
+    });
   }
 
   static listen(component, source) {

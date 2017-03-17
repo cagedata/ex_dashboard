@@ -1,0 +1,17 @@
+version: "2"
+services:
+  api:
+    build: .
+    container_name: cagedata/ex_dashboard
+    env_file:
+      - .env.docker
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/dashboard
+    command: mix kitto.server
+  web:
+    image: nginx:1.10
+    ports:
+      - "8000:80"
+
